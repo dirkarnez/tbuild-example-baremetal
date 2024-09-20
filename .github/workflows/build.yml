@@ -15,11 +15,16 @@ jobs:
       - uses: actions/checkout@v4
 
       - shell: cmd
-        run: dir &&  .\setup.cmd && .\install-packages.cmd
+        run: dir
+        
+      - shell: cmd
+        run: .\setup.cmd
+        
+      - shell: cmd
+        run: .\install-packages.cmd
 
       - shell: cmd
-        run: |
-          .\build.cmd
+        run: .\build.cmd
       
       # - name: curl cmake-3.24.0-windows-x86_64.zip
       #   shell: cmd
