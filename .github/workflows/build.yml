@@ -15,9 +15,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - shell: cmd
-        run: |
-          .\setup.cmd &&^
-          .\install-packages.cmd
+        run: dir &&  .\setup.cmd && .\install-packages.cmd
 
       - shell: cmd
         run: |
