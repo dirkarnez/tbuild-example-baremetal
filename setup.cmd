@@ -30,3 +30,17 @@ del PortableGit-2.42.0.2-64-bit.7z.exe
 if exist %GIT_EXE% (
     echo git %GIT_EXE% found
 )
+
+set ARMGCC_DIR=%DOWNLOADS_DIR%\arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-aarch64-none-elf\arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-aarch64-none-elf
+set ARMGCC_EXE=%GCC_DIR%\bin\aarch64-none-elf-gcc.exe
+
+if not exist %ARMGCC_EXE% (
+cd /d "%TEMP%" &&^
+%SystemRoot%\System32\curl.exe "https://developer.arm.com/-/media/Files/downloads/gnu/12.2.rel1/binrel/arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-aarch64-none-elf.zip" -L -O &&^
+%SEVENZIP% x arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-aarch64-none-elf.zip -o"%ARMGCC_DIR%"  &&^
+del arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-aarch64-none-elf.zip
+)
+
+if exist %ARMGCC_EXE% (
+    echo gcc %ARMGCC_EXE% found
+)
