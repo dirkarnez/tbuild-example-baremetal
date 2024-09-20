@@ -18,6 +18,10 @@ jobs:
         run: |
           .\setup.cmd &&
           .\install-packages.cmd
+
+      - shell: cmd
+        run: |
+          .\build.cmd
       
       # - name: curl cmake-3.24.0-windows-x86_64.zip
       #   shell: cmd
@@ -98,7 +102,7 @@ jobs:
             main.elf
             run.sh
           filename: "${{ github.event.repository.name }}-${{ github.ref_name }}.zip"
-          
+
       - name: Release prebuilt
         uses: ncipollo/release-action@v1
         with:
