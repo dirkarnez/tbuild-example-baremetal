@@ -16,7 +16,7 @@ jobs:
 
       - shell: cmd
         run: |
-          .\setup.cmd &&
+          .\setup.cmd &&^
           .\install-packages.cmd
 
       - shell: cmd
