@@ -10,6 +10,9 @@ set PATH=^
 %PYTHON_DIR%\Scripts;^
 %DOWNLOADS_DIR%\PortableGit\bin;
 
+C:\Windows\System32\taskkill /f /im python.exe
+if exist "%DOWNLOADS_DIR%\tbuild" rmdir /s /q "%DOWNLOADS_DIR%\tbuild"
+
 cd /d "%DOWNLOADS_DIR%" &&^
 git clone https://github.com/dirkarnez/tbuild.git &&^
 cd tbuild &&^
@@ -18,5 +21,5 @@ cd tbuild &&^
 .\install-as-package.cmd &&^
 echo tbuild installed &&^
 cd /d "%~dp0" &&^
-python -m pip install --upgrade pip
+python -m pip install --upgrade pip &&^
 python -m pip install -r requirements.txt
