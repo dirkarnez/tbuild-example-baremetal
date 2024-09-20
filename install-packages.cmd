@@ -10,7 +10,7 @@ set PATH=^
 %PYTHON_DIR%\Scripts;^
 %DOWNLOADS_DIR%\PortableGit\bin;
 
-cd /d "%USERPROFILE%\Downloads" &&^
+cd /d "%DOWNLOADS_DIR%" &&^
 git clone https://github.com/dirkarnez/tbuild.git &&^
 cd tbuild &&^
 .\setup.cmd &&^
