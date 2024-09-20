@@ -13,6 +13,11 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+
+      - shell: cmd
+        run: |
+          .\setup.cmd &&
+          .\install-packages.cmd
       
       # - name: curl cmake-3.24.0-windows-x86_64.zip
       #   shell: cmd
@@ -89,12 +94,14 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
-          directory: "${{ env.libraryName }}/cmake-build/${{ env.cmakeInstallationPath }}"
-          filename: "${{ github.event.repository.name }}-${{ github.ref_name }}-${{ matrix.os }}.zip"
+          path: |
+            main.elf
+            run.sh
+          filename: "${{ github.event.repository.name }}-${{ github.ref_name }}.zip"
           
       - name: Release prebuilt
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "${{ github.event.repository.name }}-${{ github.ref_name }}-${{ matrix.os }}.zip"
+          artifacts: "${{ github.event.repository.name }}-${{ github.ref_name }}.zip"
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
