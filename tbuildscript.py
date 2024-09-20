@@ -1,10 +1,4 @@
 from pathlib import Path
-import sys
-sys.path.append(str(Path(__file__).absolute().parent.parent.parent))
-# import tbuild
-import sys
-
-# setting path
 from tbuild import TBuild
 
 tbuild = TBuild(Path.home() / "Downloads" / "arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-aarch64-none-elf" / "arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-aarch64-none-elf" / "bin", "aarch64-none-elf-")
@@ -12,8 +6,8 @@ tbuild = TBuild(Path.home() / "Downloads" / "arm-gnu-toolchain-12.2.rel1-mingw-w
 
 tbuild.build_an_object(
   tbuild.get_gcc(),
-  "hello_world.c", 
-  "hello_world.o"
+  "main.c", 
+  "main.o"
 )
 
 tbuild.assemble_an_object(
@@ -25,12 +19,11 @@ tbuild.assemble_an_object(
 tbuild.link_an_executable_from_object_files(
   tbuild.get_linker(),
   "link_script.ld",
-  ["startup.o", "hello_world.o"],
-  "hello_world.elf"
+  ["startup.o", "main.o"],
+  "main.elf"
 )
 
 tbuild.build()
-
 
 print()
 
