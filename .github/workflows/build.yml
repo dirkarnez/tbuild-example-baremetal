@@ -104,6 +104,7 @@ jobs:
           path: |
             main.elf
             run.sh
+            report.txt
           filename: "${{ github.event.repository.name }}-${{ github.ref_name }}.zip"
 
       - name: Release prebuilt
