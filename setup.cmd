@@ -37,7 +37,7 @@ set ARMGCC_EXE=%GCC_DIR%\bin\aarch64-none-elf-gcc.exe
 if not exist %ARMGCC_EXE% (
 cd /d "%TEMP%" &&^
 %SystemRoot%\System32\curl.exe "https://developer.arm.com/-/media/Files/downloads/gnu/12.2.rel1/binrel/arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-aarch64-none-elf.zip" -L -O &&^
-%SEVENZIP% x arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-aarch64-none-elf.zip -o"%ARMGCC_DIR%"  &&^
+%SEVENZIP% x arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-aarch64-none-elf.zip -o"%DOWNLOADS_DIR%\arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-aarch64-none-elf"  &&^
 del arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-aarch64-none-elf.zip
 )
 
