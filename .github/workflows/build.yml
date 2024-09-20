@@ -12,14 +12,6 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - run: |
-          cd /d "%USERPROFILE%\Downloads" &&^
-          git clone https://github.com/dirkarnez/tbuild.git &&^
-          cd tbuild &&^
-          .\setup.cmd &&^
-          .\install-packages.cmd &&^
-          .\install-as-package.cmd
-      
       - uses: actions/checkout@v4
       
       # - name: curl cmake-3.24.0-windows-x86_64.zip
