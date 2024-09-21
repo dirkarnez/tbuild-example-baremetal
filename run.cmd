@@ -15,5 +15,5 @@ cd /d "%TEMP%" &&^
 
 if exist %QEMU_EXE% (
   echo qemu %QEMU_EXE% found
-  qemu-system-aarch64 -M virt -cpu cortex-a72 -nographic -kernel main.elf
+  %QEMU_EXE% -M virt -cpu cortex-a72 -nographic -kernel main.elf
 )
