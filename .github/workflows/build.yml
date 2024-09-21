@@ -103,7 +103,7 @@ jobs:
           type: 'zip'
           path: |
             main.elf
-            run.sh
+            run*
             report.txt
           filename: "${{ github.event.repository.name }}-${{ github.ref_name }}.zip"
 
