@@ -32,7 +32,7 @@ if exist %GIT_EXE% (
 )
 
 set ARMGCC_DIR=%DOWNLOADS_DIR%\arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-aarch64-none-elf\arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-aarch64-none-elf
-set ARMGCC_EXE=%GCC_DIR%\bin\aarch64-none-elf-gcc.exe
+set ARMGCC_EXE=%ARMGCC_DIR%\bin\aarch64-none-elf-gcc.exe
 
 if not exist %ARMGCC_EXE% (
 cd /d "%TEMP%" &&^
