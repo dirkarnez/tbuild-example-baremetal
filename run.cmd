@@ -10,8 +10,8 @@ set QEMU_EXE=%QEMU_EXE%\qemu-system-aarch64.exe
 if not exist %QEMU_EXE% (
 cd /d "%TEMP%" &&^
 %SystemRoot%\System32\curl.exe "https://github.com/dirkarnez/qemu-portable/releases/download/20240822/qemu-w64-portable-20240822.zip" -L -O  &&^
-%SEVENZIP% x qemu-w64-portable-20231224.zip -o"%QEMU_DIR%" -y &&^
-del qemu-w64-portable-20231224.zip
+%SEVENZIP% x qemu-w64-portable-20240822.zip -o"%QEMU_DIR%" -y &&^
+del qemu-w64-portable-20240822.zip
 )
 
 if exist %QEMU_EXE% (
